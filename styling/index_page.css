@@ -1,0 +1,277 @@
+/* These are the variables to use for the colours so if we change the colour scheme
+we can easily change every element in the stylesheet, to use each colour, just place
+var() around the name such as var(--grey) in place of any colour. */
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 60px;
+	background-color: rgba(0, 0, 0, 0.2); /* This lets you set the opacity as the 4th argument, so this is grey */
+}
+
+.modal_animate {
+	-webkit-animation: animatezoom 0.6s;
+	animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animation {
+	from {-webkit-transform: scale(0)}
+	to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+	from {transform: scale(0)};
+	to {transform: sclae(1);}
+}
+
+.modal > .modal_content {
+	background-color: white;
+	position: relative;
+	margin: 2em auto;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+              0 2px 2px rgba(0,0,0,0.11), 
+              0 4px 4px rgba(0,0,0,0.11), 
+              0 8px 8px rgba(0,0,0,0.11), 
+              0 16px 16px rgba(0,0,0,0.11), 
+              0 32px 32px rgba(0,0,0,0.11);
+	width: 40%;
+	border: 3px solid var(--dark_blue);
+	border-radius: 3px;
+}
+
+.modal .modal_content h3 {
+	font-size: 20px;
+}
+
+.modal .modal_content form {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	font-size: 18px;
+}
+
+.modal .modal_content .close {
+	position: absolute;
+	right: 3%;
+	top: 1.5%;
+	margin: 0px;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.error_message {
+	display: block;
+	margin: 1em 0em;
+	color: red;
+}
+
+.modal .modal_content form input:not(input[type=submit]) {
+	display: block;
+	width: 100%;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	padding: 5px;
+	border-radius: 10px;
+	border: 1px solid var(--dark_blue);
+	background-color: white;
+	padding-left: 10px;
+}
+
+.modal .modal_content form input[type=submit] {
+	margin-left: auto;
+	/*margin-right: 1em;*/
+	width: 30%;
+	font-size: 18px;
+	background-color: var(--light_blue);
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 5px;
+	color: white;
+	cursor: pointer;
+}
+
+.modal .modal_content form a {
+	color: black;
+}
+
+#join_button, #login_button {
+	border: 1px solid white;
+	border-radius: 20px;
+	background-color: var(--light_blue);
+	padding: 10px;
+	color: white;
+	font-family: "DM Sans", sans-serif;
+	font-size: 25px;
+	width: 10vw;
+	cursor: pointer;
+}
+
+.logo_image {
+	position: relative;
+	width: 30vw;
+	margin-top: 5em;
+	margin-bottom: 1em;
+	animation: logo_animation 1s;
+	user-select: none;
+}
+
+#info_list li a {
+	font-size: 20px;
+}
+
+.bg_animation {
+	animation: bg_animation 2.1s;
+}
+
+@keyframes bg_animation {
+	0% {opacity: 0;}
+	50% {opacity: 0; transform: scale(0);}
+	100% {opacity: 1; transform: scale(1);}
+}
+
+@keyframes logo_animation{
+	0% {opacity: 0;}
+	100%{opacity: 1;}
+
+}
+
+.supp_text {
+	margin-left: 1em;
+}
+
+#animation1, #animation2, #animation3, #animation4, #animation5, #animation6, #animation7 {
+	position: relative;
+	display: inline-block;
+}
+
+#animation1 {
+	animation: animation_1 2.2s;
+}
+
+@keyframes animation_1 {
+	0% {opacity: 0;}
+	50% {transform: translateX(-50%);}
+	90.9% {opacity: 0; }
+	100% {opacity: 1; transform: translateX(0%);}
+}
+
+#animation2 {
+	animation: animation_2 2.4s;
+}
+
+@keyframes animation_2 {
+	0% {opacity: 0;}
+	50% {transform: translateX(-50%);}
+	91.6% {opacity: 0;}
+	100% {opacity: 1; transform: translateX(0%);}
+}
+
+#animation3 {
+	animation: animation_3 2.6s;
+}
+
+@keyframes animation_3 {
+	0% {opacity: 0;}
+	50% {transform: translateX(-50%);}
+	92.3% {opacity: 0;}
+	100% {opacity: 1; transform: translateX(0%);}
+}
+
+#animation4 {
+	animation: animation_4 2.8s;
+}
+
+@keyframes animation_4 {
+	0% {opacity: 0;}
+	50% {transform: translateX(-50%);}
+	92.8% {opacity: 0;}
+	100% {opacity: 1; transform: translateX(0%);}
+}
+
+#animation5 {
+	animation: animation_5 3s;
+}
+
+@keyframes animation_5 {
+	0% {opacity: 0;}
+	50% {transform: translateX(-50%);}
+	93.3% {opacity: 0;}
+	100% {opacity: 1; transform: translateX(0%);}
+}
+
+#animation6 {
+	animation: animation_6 3.2s;
+}
+
+@keyframes animation_6 {
+	0% {opacity: 0;}
+	50% {transform: translateX(-50%);}
+	93.8% {opacity: 0;}
+	100% {opacity: 1; transform: translateX(0%);}
+}
+
+#animation7 {
+	animation: animation_7 3.4s;
+}
+
+@keyframes animation_7 {
+	0% {opacity: 0;}
+	50% {transform: translateX(-50%);}
+	94.1% {opacity: 0;}
+	100% {opacity: 1; transform: translateX(0%);}
+}
+
+
+#main_information {
+	background-color: var(--dark_blue);
+	color: white;
+	width: 60vw;
+	border-radius: 20px;
+	padding: 1em 0em 1em 0em;
+	margin: auto;
+	user-select: none;
+}
+
+#main_information li {
+	width: 48em;
+	text-align: left;
+	padding: 5px 0px;
+	overflow: auto;
+}
+
+#join_area {
+	display: flex;
+	flex-direction: row;
+	width: 100vw;
+	justify-content: center;
+	position: relative;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	font-size: 32px;
+	user-select: none;
+	animation: join_animation 5.4s;
+}
+
+#left_side, #right_side {
+	width: 30vw;
+}
+
+#join_area h2 {
+	font-size: 1em;
+}
+
+@keyframes join_animation {
+	0% {opacity: 0;}
+	81.5% {opacity: 0;}
+	100% {opacity: 1;}	
+}
+
+#main_content {
+	margin: 0em;
+}

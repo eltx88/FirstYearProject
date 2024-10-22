@@ -1,0 +1,561 @@
+/* These are the variables to use for the colours so if we change the colour scheme
+we can easily change every element in the stylesheet, to use each colour, just place
+var() around the name such as var(--grey) in place of any colour. */
+:root {
+	--grey: #343434;
+	--dark_blue: #202A45;
+	--light_blue: #63B4CF;
+	--white: #FFFFFF;
+}
+
+
+body {
+	font-family: "DM Sans", sans-serif;
+	font-size: 15px;
+	margin: 0px;
+	/*margin-bottom: 30vh;*/
+	/*height: 10vh;*/
+	/*background: linear-gradient(to right,var(--dark_blue),var(--white));*/
+}
+
+#main{
+	height: 10vh;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 60px;
+	background-color: rgba(0, 0, 0, 0.1); /* This lets you set the opacity as the 4th argument, so this is grey */
+}
+
+.modal_animate {
+	animation: animatezoom 0.6s forwards;
+}
+
+@-webkit-keyframes animation {
+	from {-webkit-transform: scale(0)}
+	to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+	from {transform: scale(0)};
+	to {transform: sclae(1);}
+}
+
+.modal > .modal_content {
+	background-color: #d3e5eb;
+	position: relative;
+	padding-bottom: 6%;
+	margin: 5px auto;
+	width: 40%;
+	border: 3px solid var(--dark_blue);
+	border-radius: 5px;
+	box-shadow: rgb(255 255 255 / 50%) 0em 0em 0.9em 0.1em;
+}
+
+.modal .modal_content h3 {
+	font-size: 1.2em;
+}
+
+.modal .modal_content form {
+	padding: 20px;
+}
+
+.modal .modal_content .close {
+	position: absolute;
+	right: 3%;
+	top: 1.5%;
+	margin: 0px;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.error_message {
+	display: block;
+	margin: 1em 0em;
+	color: red;
+}
+
+.modal .modal_content form input:not(input[type=submit]) {
+	display: block;
+	width: 100%;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	padding: 5px;
+}
+
+.modal .modal_content form input[type=submit] {
+	float: right;
+	font-size: 18px;
+	background-color: var(--light_blue);
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 5px;
+	color: white;
+	cursor: pointer;
+}
+
+.modal .modal_content form a {
+	color: black;
+}
+
+#join_button {
+	border: 1px solid white;
+	border-radius: 3px;
+	background-color: var(--light_blue);
+	padding: 10px;
+	color: white;
+	font-family: "DM Sans", sans-serif;
+	font-size: 20px;
+	width: 10%;
+	cursor: pointer;
+}
+
+.logo_image {
+	width: 20%;
+	margin-top: 5em;
+	margin-bottom: 3em;
+}
+
+#main_information {
+	background-color: var(--dark_blue);
+	color: white;
+	padding: 1em 0em 1em 0em;
+}
+
+#join_area {
+	margin-top: 2.5em;
+}
+
+#main_content {
+	margin: 0em;
+}
+
+.main_home {
+	display: flex;
+	flex-direction: row;
+}
+
+#navigation_pane {
+	position: sticky;
+	width:  20%;
+	height: 100%;
+	border-right: 3px solid var(--dark_blue);
+	font-size: 1.1em;
+}
+
+#navigation_pane ul {
+	position: relative;
+	margin-top: 0em;
+	list-style: none;
+	padding-left: 0em;
+}
+
+#navigation_pane li {
+	margin: 0em 2em;
+	padding: 1em;
+}
+
+#navigation_pane ul li a {
+	cursor: pointer;
+}
+
+#navigation_pane ul li a:active {
+	color: var(--light_blue);
+}
+
+#navigation_pane h2 {
+	margin-left: 1em;
+	text-decoration: underline;
+}
+
+#current_content {
+	width: 80%;
+}
+
+#current_content h2 {
+	position: relative;
+	/* left: 5%; */
+}
+
+#current_content .info {
+	padding-left: 3em;
+}
+
+#current_content .info h2 {
+	padding-bottom: 0.2em;
+	text-decoration: underline;
+}
+
+.info {
+	margin: 2em 4em 4em 4em;
+	padding: 1em 0em 0em 0em;
+	border: 0.1em solid var(--dark_blue);
+}
+
+/* Profile page styling */
+/*#navbar #homepage_link {
+	position: absolute;
+	left: 2%;
+	top: 0.25em;
+	height: 80%;
+	font-size: 20px;
+	color: white;
+	cursor: pointer;
+	padding: 0.5em;
+	background-color: var(--light_blue);
+	border: 1px solid var(--light_blue);
+	border-radius: 3px;
+}*/
+
+#homepage_link a {
+	text-decoration: none;
+	color: white;
+}
+
+#change_profile_form {
+	margin: 8em 20em;
+	display: flex;
+	flex-direction: row;
+}
+
+#change_profile_form input[type=text] {
+	box-sizing: border-box;
+	padding: 1em;
+	margin-bottom: 2em;
+	background-color: #E8E8E8;
+	border: none;
+	width: 80%;
+}
+
+#change_profile_form select {
+	box-sizing: border-box;
+	padding: 1em;
+	margin-bottom: 2em;
+	background-color: #E8E8E8;
+	border: none;
+	width: 80%;
+	cursor: pointer;
+}
+
+#change_profile_form textarea, #change_profile_form input[type=button] {
+	width:  80%;
+}
+
+#change_profile_form textarea {
+	box-sizing: border-box;
+	border: 1px solid var(--dark_blue);
+	border-radius: 10px;
+	height: 18vh;
+	padding: 1em;
+	border: none;
+	background-color: #E8E8E8;
+	font-family: "DM Sans", sans-serif;
+	font-size: 13px;
+}
+
+
+#hobbies_button {
+	font-family: "DM Sans", sans-serif;
+	background-color: var(--light_blue);
+	font-size: 20px;
+	color: white;
+	border: none;
+	cursor: pointer;
+	margin-bottom: 1.2em;
+	padding: 0.3em;
+	width: 60%;
+}
+
+#save_changes_button {
+	width: 20%;
+	height: 9%;
+	padding: 1em;
+	margin-top: 0em;
+	color: white;
+	border: 1px solid var(--dark_blue);
+	border-radius: 5px;
+	background-color: var(--dark_blue);
+	cursor: pointer;
+	text-align: center;
+
+}
+
+.modal {
+	padding-top: 10em;
+}
+
+
+#change_profile_form .child {
+	width: 50%;
+	height: 100vh;
+	padding-left: 4em;
+	padding-right: 4em;
+}
+
+#change_profile_form .child input:not([type=checkbox]), #change_profile_form .child label, #change_profile_form .child select, #change_profile_form .child textarea {
+	width: 100%;
+}
+
+#change_profile_form .child .modal_content label {
+	width:  90%;
+}
+
+.profile_page_error {
+	color: red;
+}
+
+.modal_content_hobbies {
+	display: flex;
+	flex-direction: row;
+	padding: 2em;
+}
+
+.hobbies_child {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+/* sets how uselected hobbie looks like*/
+.hobbies_checkbox + label {
+	display:block;
+	width:80%;
+	border:2px solid var(--dark_blue);
+	background:#f3f8ff;
+	border-radius:2px;
+	text-align: center;
+	padding: 3px 0;
+	display: block;
+}
+.hobbies_checkbox
+{
+	opacity: 0;
+}
+
+.hobbies_checkbox:hover + label {
+	background: var(--dark_blue);
+	color: white;
+}
+
+/* sets how selected hobbie is modified*/
+.hobbies_checkbox:checked + label {
+	border-color: rgb(0, 140, 255);
+}
+.dividier {
+	text-align: center;
+	width: 90%;
+	background-color: var(--dark_blue);
+}
+
+/*#hobbies_modal {
+	top: none;
+	left: none;
+	display: flex;
+	flex-direction: row;
+	margin: auto;
+}
+
+#hobbies_modal .hobbies_child input {
+	width: 80%;
+	margin: 5%;
+}*/
+
+
+/* forum styling */
+.forum {
+	display: flex;
+	flex-direction: column;
+}
+
+.forum h2 {
+	margin-left: 1em;
+	text-decoration: none;
+}
+
+.forum form {
+	border: 3px solid var(--dark_blue);
+	border-radius: 10px;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.forum form label {
+	font-size: 1.2em;
+	margin: 1em 1em 0.5em 1em;
+}
+
+.forum form textarea {
+	width: 90%;
+	margin: 0em 1.2em;
+	padding: 1em;
+	font-family: "DM Sans", sans-serif;
+}
+
+.forum form input[type=submit] {
+	width: 15%;
+	margin: 0.5em 1em;
+	font-size: 1.1em;
+	background-color: var(--dark_blue);
+	border: 1px solid var(--dark_blue);
+	border-radius: 5px;
+	color: white;
+}
+
+.forum_section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.forum_h3 {
+	float: left;
+	margin-left: 1em;
+}
+
+.forum_box {
+	border: 1px solid var(--dark_blue);
+	margin-bottom: 1em;
+	border-radius: 3px;
+	width: 80%;
+}
+
+.forum_box_details {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.forum_box_details p {
+	padding-top: 0.2em;
+}
+
+.forum_box .date {
+	order: 2;
+	margin-left: auto;
+	margin-right: 1em;
+}
+
+.forum_box h3 {
+	margin-left: 1em;
+}
+
+.forum_box .text_content {
+	margin-top: 0;
+	margin-left: 2em;
+}
+
+.container{
+	background: white;
+	width: 100%;
+	height: 80vh;
+	margin: 0 auto;
+	position: relative;
+	/*margin-top: 10%;*/
+	box-shadow: 2px 5px 20px rgba(119, 119, 119, 0.5);
+	display: flex;
+	flex-direction: row;
+}
+.left_box{	
+	height: 90vh;
+	width: 12vw;
+	z-index: 10;
+	background-color: var(--light_blue);
+	position: relative;
+	margin-top: -5vh;
+	margin-left: 3vw;
+	box-shadow: 3px 3px 10px rgba(119, 119, 119, 0.5);
+	border: .1em solid #fff;
+}
+
+.left_box nav {
+	position: relative;
+	top: 10vh;
+}
+
+nav a{
+	list-style: none;
+	padding: 35px;
+	color: #fff;
+	text-align: center;
+	font-size: 2em;
+	display: block;
+	transition: all .3 ease-in-out;
+
+}
+
+nav a p {
+	font-size: 15px;
+}
+
+nav a:hover {
+	color: black;
+	cursor: pointer;
+	transform: scale(1.2);
+}
+nav a:first-child{
+	margin-top: 7px;
+	font-size: 6em;
+
+}
+nav a.active{
+	color: black;
+}
+.right_box{
+	/*width: 60%;*/
+	margin-left: 3vw;
+	width: 100%;
+}
+.tabShow{
+	transition: all .5s ease-in;
+	width: 100%;
+	height: 100%;
+	display: none;
+	padding: 25px;
+}
+
+#profile_page_link_highlight{
+	color: var(--light_blue);
+	font-weight: 900;
+	font-style: italic;
+	margin: 0.2em 1.5em;
+	width: 5em;
+	height: 80%;
+	font-family: "DM Sans", sans-serif;
+	font-size: 20px;
+	border-radius: 20px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-around;
+	text-decoration: none;
+	width: 7em;
+}
+
+.confirm_button {
+	background-color: var(--dark_blue);
+    position: absolute;
+    width: 20% !important;
+    height: 13%;
+    left: 40%;
+    top: 78%;
+    color: white;
+	border-radius: 5px;
+	font-size: 1em;
+}
+
+.confirm_button:hover {
+	background-color: #f7f7f7;
+	border: 2px solid #222d4d;
+	color: #222d4d;
+}
